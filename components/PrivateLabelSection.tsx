@@ -7,7 +7,7 @@ const PrivateLabelSection: React.FC = () => {
     {
       icon: <Scissors className="text-[#E6B7B2]" size={32} />,
       title: "Design & Modelagem",
-      description: "Desenvolvemos peças exclusivas ou adaptamos nossos modelos consagrados para a identidade da sua marca."
+      description: "Desenvolvemos peças que podem receber adaptações para melhor atender ao posicionamento e identidade da sua marca."
     },
     {
       icon: <Zap className="text-[#E6B7B2]" size={32} />,

@@ -8,6 +8,7 @@ import PrivateLabelSection from './components/PrivateLabelSection';
 import ProductCatalog from './components/ProductCatalog';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
+import FloatingWhatsAppButton from './components/FloatingWhatsAppButton';
 
 const App: React.FC = () => {
   return (
@@ -22,6 +23,7 @@ const App: React.FC = () => {
         <ContactSection />
       </main>
       <Footer />
+      <FloatingWhatsAppButton />
     </div>
   );
 };

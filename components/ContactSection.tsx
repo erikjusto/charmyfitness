@@ -42,24 +42,34 @@ const ContactSection: React.FC = () => {
                 </div>
               </a>
 
-              <div className="flex items-center gap-6">
-                <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center">
-                  <MessageCircle size={20} />
+              <a 
+                href="https://wa.me/5535997301868?text=Ol%C3%A1!%20entrei%20em%20seu%20site%20Charmy%20Lingerie,%20quero%20saber%20mais%20sobre%20private%20label%20Fitness"
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-6 group"
+              >
+                <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-[#E6B7B2] group-hover:border-[#E6B7B2] transition-all">
+                  <MessageCircle size={20} className="group-hover:text-black transition-colors" />
                 </div>
                 <div>
                   <p className="text-[10px] uppercase tracking-widest opacity-50 mb-1">WhatsApp - Alessandra</p>
                   <p className="text-lg">(35) 99730-1868</p>
                 </div>
-              </div>
+              </a>
             </div>
 
-            <button className="w-full bg-[#E6B7B2] text-black py-5 rounded-xl font-bold uppercase tracking-[0.2em] text-sm flex items-center justify-center gap-3 hover:bg-white transition-all group">
+            <a 
+              href="https://wa.me/5535997301868?text=Ol%C3%A1!%20entrei%20em%20seu%20site%20Charmy%20Lingerie,%20quero%20saber%20mais%20sobre%20private%20label%20Fitness"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full bg-[#E6B7B2] text-black py-5 rounded-xl font-bold uppercase tracking-[0.2em] text-sm flex items-center justify-center gap-3 hover:bg-white transition-all group"
+            >
               Entre em contato agora
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right group-hover:translate-x-2 transition-transform" aria-hidden="true">
                 <path d="M5 12h14"></path>
                 <path d="m12 5 7 7-7 7"></path>
               </svg>
-            </button>
+            </a>
           </div>
 
           <div className="md:w-1/2 relative min-h-[400px]">
