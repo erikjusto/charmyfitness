@@ -3,7 +3,7 @@ import { motion } from 'motion/react';
 
 const Hero: React.FC = () => {
   return (
-    <section id="início" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="início" className="relative h-[600px] md:h-[800px] flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
