@@ -12,7 +12,7 @@ const Hero: React.FC = () => {
           className="w-full h-full object-cover"
           referrerPolicy="no-referrer"
         />
-        <div className="absolute inset-0 bg-black/20"></div>
+        <div className="absolute inset-0 bg-black/15"></div>
       </div>
 
       <div className="container mx-auto px-6 relative z-10 text-left text-white">

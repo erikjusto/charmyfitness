@@ -15,10 +15,9 @@ const Header: React.FC = () => {
             className="h-10 object-contain brightness-0 invert"
             referrerPolicy="no-referrer"
           />
-          <span className="text-[10px] uppercase tracking-[0.3em] opacity-60 mt-1">Fitness</span>
         </div>
 
-        <nav className="hidden md:flex space-x-12">
+        <nav className="hidden md:flex space-x-12 items-center">
           {['Início', 'Propósito', 'Private Label', 'Catálogo', 'Contato'].map((item) => (
             <a
               key={item}
@@ -28,6 +27,14 @@ const Header: React.FC = () => {
               {item}
             </a>
           ))}
+          <a
+            href="https://charmylingerie.com.br/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[11px] uppercase tracking-[0.2em] hover:text-white/70 transition-colors border border-white/30 px-4 py-2 rounded hover:bg-white/10"
+          >
+            Conheça a Charmy Lingerie
+          </a>
         </nav>
 
         <button 
@@ -57,6 +64,15 @@ const Header: React.FC = () => {
                   {item}
                 </a>
               ))}
+              <a
+                href="https://charmylingerie.com.br/"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setIsOpen(false)}
+                className="text-[11px] uppercase tracking-[0.2em] hover:text-white/70 transition-colors pt-2 border-t border-white/10"
+              >
+                Conheça a Charmy Lingerie
+              </a>
             </div>
           </motion.div>
         )}

@@ -23,11 +23,10 @@ const Footer: React.FC = () => {
               className="h-8 object-contain brightness-0 invert"
               referrerPolicy="no-referrer"
             />
-            <span className="text-[9px] uppercase tracking-[0.3em] opacity-60 mt-1">Fitness</span>
           </div>
           
-          <div className="text-[10px] uppercase tracking-[0.2em] opacity-50 text-center md:text-right">
-            © {new Date().getFullYear()} Charmy Lingerie. Todos os direitos reservados.
+          <div className="text-[9px] uppercase tracking-[0.2em] opacity-50 text-center md:text-right max-w-xl leading-relaxed">
+            © 2026 Gomes & Oliveira Confeccoes Ltda - CNPJ: 08.229.801/0001-35
           </div>
         </div>
       </div>
