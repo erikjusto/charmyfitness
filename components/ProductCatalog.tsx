@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, ZoomIn, X } from 'lucide-react';
 
 const ProductCatalog: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [pageWidth, setPageWidth] = useState(350);
+  const [isZoomOpen, setIsZoomOpen] = useState(false);
   
   const pdfBaseUrl = "https://charmylingerie.com.br/wp-content/uploads/2026/02/Catalogo-Fitness-Charmy.pdf";
   
@@ -71,14 +72,27 @@ const ProductCatalog: React.FC = () => {
 
             {/* Content */}
             <div className="bg-white p-2 rounded-lg shadow-xl transition-all duration-300">
-                 <div className="overflow-hidden rounded flex flex-col items-center">
-                    <img 
-                        src={catalogImages[currentIndex]} 
-                        alt={`Modelo ${currentIndex + 1}`}
-                        style={{ width: pageWidth }}
-                        className="object-cover h-auto"
-                        referrerPolicy="no-referrer"
-                    />
+                 <div className="overflow-hidden rounded flex flex-col items-center relative group">
+                    <div className="relative">
+                      <img 
+                          src={catalogImages[currentIndex]} 
+                          alt={`Modelo ${currentIndex + 1}`}
+                          style={{ width: pageWidth }}
+                          className="object-cover h-auto cursor-zoom-in"
+                          referrerPolicy="no-referrer"
+                          onClick={() => setIsZoomOpen(true)}
+                      />
+                      <button 
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setIsZoomOpen(true);
+                        }}
+                        className="absolute top-4 right-4 bg-white/90 text-black p-2 rounded-full opacity-0 group-hover:opacity-100 transition-all hover:bg-[#E6B7B2] hover:text-white shadow-lg"
+                        aria-label="Zoom image"
+                      >
+                        <ZoomIn size={20} />
+                      </button>
+                    </div>
                     <div className="p-4 text-center border-t border-gray-100 w-full">
                         <span className="text-[10px] uppercase tracking-widest text-gray-400">Imagem {currentIndex + 1} de {totalItems}</span>
                     </div>
@@ -99,6 +113,27 @@ const ProductCatalog: React.FC = () => {
           </a>
         </div>
       </div>
+
+      {isZoomOpen && (
+        <div 
+          className="fixed inset-0 z-[100] bg-black/90 flex items-center justify-center p-4 backdrop-blur-sm"
+          onClick={() => setIsZoomOpen(false)}
+        >
+          <button 
+            className="absolute top-6 right-6 text-white/70 hover:text-white transition-colors"
+            onClick={() => setIsZoomOpen(false)}
+          >
+            <X size={40} />
+          </button>
+          <img 
+            src={catalogImages[currentIndex]} 
+            alt={`Zoomed Modelo ${currentIndex + 1}`}
+            className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+            referrerPolicy="no-referrer"
+          />
+        </div>
+      )}
     </section>
   );
 };

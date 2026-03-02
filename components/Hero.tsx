@@ -9,13 +9,13 @@ const Hero: React.FC = () => {
         <img
           src="https://charmylingerie.com.br/wp-content/uploads/2026/02/Catalogo-Fitness-Charmy-1.pdf-1920-x-800-px-1.webp"
           alt="Background"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-[35%_center] md:object-center"
           referrerPolicy="no-referrer"
         />
         <div className="absolute inset-0 bg-black/15"></div>
       </div>
 
-      <div className="container mx-auto px-6 relative z-10 text-left text-white">
+      <div className="container mx-auto px-6 relative z-10 text-left text-white pt-48 md:pt-0">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
