@@ -15,7 +15,7 @@ const Hero: React.FC = () => {
         <div className="absolute inset-0 bg-black/15"></div>
       </div>
 
-      <div className="container mx-auto px-6 relative z-10 text-left text-white pt-48 md:pt-0">
+      <div className="container mx-auto px-6 relative z-10 text-left text-white pt-24 md:pt-0">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -31,12 +31,12 @@ const Hero: React.FC = () => {
           <p className="text-lg text-gray-200 max-w-2xl mb-10 leading-relaxed">
             Sua marca com a qualidade Charmy. Produção especializada em moda fitness de alta performance para marcas que buscam sofisticação e resultados.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-start">
+          <div className="flex flex-row gap-3 sm:gap-4 justify-start">
             <a 
               href="https://charmylingerie.com.br/wp-content/uploads/2026/02/Catalogo-Fitness-Charmy.pdf" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="bg-white text-black px-10 py-5 rounded-xl font-bold uppercase tracking-[0.2em] text-sm hover:bg-[#E6B7B2] hover:text-white transition-all inline-block text-center"
+              className="flex-1 sm:flex-none bg-white text-black px-2 py-4 sm:px-10 sm:py-5 rounded-xl font-bold uppercase tracking-widest sm:tracking-[0.2em] text-[10px] sm:text-sm hover:bg-[#E6B7B2] hover:text-white transition-all flex items-center justify-center text-center whitespace-nowrap"
             >
               Ver Catálogo
             </a>
@@ -44,10 +44,10 @@ const Hero: React.FC = () => {
               href="https://wa.me/5535997301868?text=Ol%C3%A1!%20entrei%20em%20seu%20site%20Charmy%20Lingerie,%20quero%20saber%20mais%20sobre%20private%20label%20Fitness"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto bg-[#E6B7B2] text-black py-5 px-8 rounded-xl font-bold uppercase tracking-[0.2em] text-sm flex items-center justify-center gap-3 hover:bg-white transition-all group"
+              className="flex-1 sm:flex-none bg-[#E6B7B2] text-black px-2 py-4 sm:px-8 sm:py-5 rounded-xl font-bold uppercase tracking-widest sm:tracking-[0.2em] text-[10px] sm:text-sm flex items-center justify-center gap-2 sm:gap-3 hover:bg-white transition-all group whitespace-nowrap"
             >
               Fale com comercial 
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right group-hover:translate-x-2 transition-transform" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right group-hover:translate-x-2 transition-transform sm:w-[18px] sm:h-[18px]" aria-hidden="true">
                 <path d="M5 12h14"></path>
                 <path d="m12 5 7 7-7 7"></path>
               </svg>

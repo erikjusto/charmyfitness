@@ -74,9 +74,9 @@ const ContactSection: React.FC = () => {
 
           <div className="md:w-1/2 relative min-h-[400px]">
             <img 
-              src="https://charmylingerie.com.br/wp-content/uploads/2026/03/Mulher-tatuada-em-ginasio-industrial.png" 
+              src="https://charmylingerie.com.br/wp-content/uploads/2026/03/Black-and-White-Modern-Gym-Presentation.webp" 
               alt="Contact Background"
-              className="absolute inset-0 w-full h-full object-cover"
+              className="absolute inset-0 w-full h-full object-cover object-right"
               referrerPolicy="no-referrer"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-[#1a1a1a] via-transparent to-transparent"></div>
