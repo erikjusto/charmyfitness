@@ -74,7 +74,7 @@ const ContactSection: React.FC = () => {
 
           <div className="md:w-1/2 relative min-h-[400px]">
             <img 
-              src="https://charmylingerie.com.br/wp-content/uploads/2026/02/AQN5yUQkpLOQV7znvQXxg13SUCNxB4BLF6aHteJ46ZPyVLPAtIGdZw8gEM60I7qm7XwBGUnDEFPK_LMGpFJ-oiQhk3zA8_g7WgRcSq06npj8i5hwtteAkdOJALQF_iLQn-AUW1RHJ0p8EtttgVTvV33PkBYGiQ.jpeg" 
+              src="https://charmylingerie.com.br/wp-content/uploads/2026/03/Mulher-sorridente-em-ginasio-industrial.webp" 
               alt="Contact Background"
               className="absolute inset-0 w-full h-full object-cover"
               referrerPolicy="no-referrer"
