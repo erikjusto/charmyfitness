@@ -9,7 +9,7 @@ const ContactSection: React.FC = () => {
         <div className="bg-[#1a1a1a] rounded-[40px] overflow-hidden shadow-2xl flex flex-col md:flex-row">
           <div className="md:w-1/2 p-12 md:p-20 text-white">
             <span className="text-[10px] uppercase tracking-[0.4em] text-[#E6B7B2] mb-6 block">Vamos Conversar</span>
-            <h2 className="text-5xl serif mb-10 leading-tight">Pronta para elevar <br />sua marca?</h2>
+            <h2 className="text-3xl md:text-5xl serif mb-10 leading-tight">Pronta para elevar <br />sua marca?</h2>
             
             <div className="space-y-8 mb-12">
               <a 

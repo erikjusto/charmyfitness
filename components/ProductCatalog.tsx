@@ -5,10 +5,11 @@ const ProductCatalog: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [pageWidth, setPageWidth] = useState(350);
   const [isZoomOpen, setIsZoomOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   
   const pdfBaseUrl = "https://charmylingerie.com.br/wp-content/uploads/2026/02/Catalogo-Fitness-Charmy.pdf";
   
-  const catalogImages = [
+  const desktopImages = [
     "https://charmylingerie.com.br/wp-content/uploads/2026/02/5-1.png",
     "https://charmylingerie.com.br/wp-content/uploads/2026/02/6-1.png",
     "https://charmylingerie.com.br/wp-content/uploads/2026/02/7-1.png",
@@ -18,14 +19,32 @@ const ProductCatalog: React.FC = () => {
     "https://charmylingerie.com.br/wp-content/uploads/2026/02/11.png"
   ];
 
+  const mobileImages = [
+    "https://charmylingerie.com.br/wp-content/uploads/2026/03/babfd58d-13f1-4f57-ae96-83de6bd13fe0-0003.webp",
+    "https://charmylingerie.com.br/wp-content/uploads/2026/03/babfd58d-13f1-4f57-ae96-83de6bd13fe0-0004.webp",
+    "https://charmylingerie.com.br/wp-content/uploads/2026/03/babfd58d-13f1-4f57-ae96-83de6bd13fe0-0005.webp",
+    "https://charmylingerie.com.br/wp-content/uploads/2026/03/babfd58d-13f1-4f57-ae96-83de6bd13fe0-0007.webp",
+    "https://charmylingerie.com.br/wp-content/uploads/2026/03/babfd58d-13f1-4f57-ae96-83de6bd13fe0-0008.webp",
+    "https://charmylingerie.com.br/wp-content/uploads/2026/03/babfd58d-13f1-4f57-ae96-83de6bd13fe0-0009.webp",
+    "https://charmylingerie.com.br/wp-content/uploads/2026/03/babfd58d-13f1-4f57-ae96-83de6bd13fe0-0010.webp",
+    "https://charmylingerie.com.br/wp-content/uploads/2026/03/babfd58d-13f1-4f57-ae96-83de6bd13fe0-0011.webp"
+  ];
+
+  const catalogImages = isMobile ? mobileImages : desktopImages;
+
   useEffect(() => {
-    const updateWidth = () => {
+    const handleResize = () => {
       setPageWidth(Math.min(window.innerWidth - 48, 800));
+      const mobile = window.innerWidth < 768;
+      if (mobile !== isMobile) {
+        setIsMobile(mobile);
+        setCurrentIndex(0); // Reset index when switching views to avoid out of bounds
+      }
     };
-    window.addEventListener('resize', updateWidth);
-    updateWidth();
-    return () => window.removeEventListener('resize', updateWidth);
-  }, []);
+    window.addEventListener('resize', handleResize);
+    handleResize();
+    return () => window.removeEventListener('resize', handleResize);
+  }, [isMobile]);
 
   const totalItems = catalogImages.length;
 
@@ -52,11 +71,11 @@ const ProductCatalog: React.FC = () => {
 
         <div className="relative group max-w-5xl mx-auto flex flex-col items-center">
           
-          <div className="relative w-full flex justify-center items-center min-h-[600px]">
+          <div className="relative w-full flex justify-center items-center md:min-h-[600px]">
             {/* Navigation Buttons */}
             <button 
                 onClick={prevSlide}
-                className="absolute left-0 md:-left-12 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center z-20 hover:bg-[#E6B7B2] hover:text-white transition-all"
+                className="hidden md:flex absolute left-0 md:-left-12 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white shadow-lg items-center justify-center z-20 hover:bg-[#E6B7B2] hover:text-white transition-all"
                 aria-label="Previous slide"
             >
                 <ChevronLeft size={24} />
@@ -64,7 +83,7 @@ const ProductCatalog: React.FC = () => {
             
             <button 
                 onClick={nextSlide}
-                className="absolute right-0 md:-right-12 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center z-20 hover:bg-[#E6B7B2] hover:text-white transition-all"
+                className="hidden md:flex absolute right-0 md:-right-12 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white shadow-lg items-center justify-center z-20 hover:bg-[#E6B7B2] hover:text-white transition-all"
                 aria-label="Next slide"
             >
                 <ChevronRight size={24} />
@@ -93,8 +112,14 @@ const ProductCatalog: React.FC = () => {
                         <ZoomIn size={20} />
                       </button>
                     </div>
-                    <div className="p-4 text-center border-t border-gray-100 w-full">
+                    <div className="p-2 md:p-4 flex justify-between items-center border-t border-gray-100 w-full">
+                        <button onClick={prevSlide} className="md:hidden p-2 text-gray-600 hover:text-black transition-colors" aria-label="Previous slide">
+                          <ChevronLeft size={20} />
+                        </button>
                         <span className="text-[10px] uppercase tracking-widest text-gray-400">Imagem {currentIndex + 1} de {totalItems}</span>
+                        <button onClick={nextSlide} className="md:hidden p-2 text-gray-600 hover:text-black transition-colors" aria-label="Next slide">
+                          <ChevronRight size={20} />
+                        </button>
                     </div>
                  </div>
             </div>
